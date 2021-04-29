@@ -16,6 +16,8 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         setUser,
+        usuario,
+        setUsuario,
       }}
     >
       {children}
