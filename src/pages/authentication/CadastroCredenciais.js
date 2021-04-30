@@ -12,6 +12,8 @@ import FormPassword from "../../components/CampoSenha";
 import * as firebase from "firebase";
 import "firebase/firestore";
 
+import Fonts from "../../styles/Fonts";
+
 const CadastroCredenciais = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
@@ -213,13 +215,15 @@ const Estilos = StyleSheet.create({
     marginBottom: 10,
   },
   mensagemConta: {
+    fontFamily: Fonts.teste,
     fontSize: 25,
-    fontWeight: "bold",
+    //fontWeight: "bold",
     color: "#ffb745",
   },
   mensagemCredencial: {
     fontSize: 13,
     fontWeight: "bold",
+    color: "black",
   },
   mensagemErro: {
     fontSize: 12,

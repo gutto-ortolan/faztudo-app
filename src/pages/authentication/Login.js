@@ -14,6 +14,7 @@ import FormInput from "../../components/CampoTexto";
 import FormPassword from "../../components/CampoSenha";
 
 import Colors from "../../styles/Colors";
+import Fonts from "../../styles/Fonts";
 
 import * as firebase from "firebase";
 
@@ -186,6 +187,7 @@ const Estilos = StyleSheet.create({
   },
   registerText: {
     color: "#222",
+    fontFamily: Fonts.teste,
   },
   mensagemErro: {
     fontSize: 12,
