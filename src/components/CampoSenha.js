@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import Fonts from "../styles/Fonts";
 
 const CampoSenha = ({ labelValue, placeholderText, iconType, ...rest }) => {
   const [hidePass, setHidePass] = useState(true);
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     color: "#333",
     justifyContent: "center",
     alignItems: "center",
+    fontFamily: Fonts.labels,
   },
   icon: {
     width: "15%",

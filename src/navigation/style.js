@@ -1,15 +1,17 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
+import Fonts from "../styles/Fonts";
 
 export default StyleSheet.create({
   textoVoltar: {
+    fontFamily: Fonts.subtitulo,
     fontSize: 12,
-    fontWeight: 'bold',
     marginBottom: 2,
+    marginLeft: -3,
   },
   btnVoltar: {
     marginLeft: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

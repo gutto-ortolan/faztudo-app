@@ -18,6 +18,8 @@ import ModalDropdown from "react-native-modal-dropdown";
 import * as firebase from "firebase";
 import "firebase/firestore";
 
+import Fonts from "../../styles/Fonts";
+
 const CadastroInformacoes = ({ route, navigation }) => {
   const [termo, setTermo] = useState(false);
   const [profissional, setProfissional] = useState(false);
@@ -66,26 +68,31 @@ const CadastroInformacoes = ({ route, navigation }) => {
     if (nome == null) {
       setErroNome("Informe o seu nome completo");
       error = true;
+      setLoading(false);
     }
 
     if (telefone == null) {
       setErroTelefone("Informe o seu telefone de contato");
       error = true;
+      setLoading(false);
     } else {
       if (telefone.length != 15) {
         setErroTelefone("Informe o seu telefone de contato corretamente");
         error = true;
+        setLoading(false);
       }
     }
 
     if (!profissional && !cliente) {
       setErroCheck("Escolha uma das opções");
       error = true;
+      setLoading(false);
     }
 
     if (genero == null) {
       setErroGenero("Informe o seu gênero");
       error = true;
+      setLoading(false);
     }
 
     return !error;
@@ -335,22 +342,24 @@ const Estilos = StyleSheet.create({
   label: {
     marginRight: 8,
     fontSize: 15,
+    fontFamily: Fonts.labels,
   },
   labelSecundario: {
     marginRight: 8,
     fontSize: 13,
+    fontFamily: Fonts.labels,
   },
   containerMensagem: {
     marginBottom: 10,
   },
   mensagemConta: {
     fontSize: 25,
-    fontWeight: "bold",
+    fontFamily: Fonts.tituloNegrito,
     color: "#ffb745",
   },
   mensagemCredencial: {
     fontSize: 13,
-    fontWeight: "bold",
+    fontFamily: Fonts.subtitulo,
   },
   checkboxTermosCotainer: {
     flexDirection: "row",
@@ -406,19 +415,22 @@ const Estilos = StyleSheet.create({
     height: 130,
     borderColor: "#ffb745",
     borderWidth: 1,
+    marginTop: -16,
   },
   genderTextStyle: {
     fontSize: 16,
     color: "#666",
+    fontFamily: Fonts.labels,
   },
   dropdownTextStyle: {
     fontSize: 16,
     color: "#333",
+    fontFamily: Fonts.labels,
   },
   labelTermo: {
     marginLeft: -3,
     color: "#ffb745",
-    fontWeight: "bold",
+    fontFamily: Fonts.labels,
     textDecorationLine: "underline",
   },
   buttonContainer: {
@@ -433,7 +445,7 @@ const Estilos = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: "bold",
     color: "#ffffff",
+    fontFamily: Fonts.botoes,
   },
 });

@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { TextInputMask } from "react-native-masked-text";
 
 import { AntDesign } from "@expo/vector-icons";
+import Fonts from "../styles/Fonts";
 
 const CampoTelefone = ({ labelValue, placeholderText, iconType, ...rest }) => {
   return (
@@ -59,5 +60,6 @@ const styles = StyleSheet.create({
     color: "#333",
     justifyContent: "center",
     alignItems: "center",
+    fontFamily: Fonts.labels,
   },
 });

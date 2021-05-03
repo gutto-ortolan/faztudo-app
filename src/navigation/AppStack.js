@@ -20,7 +20,6 @@ const AppStack = () => {
       const usu = await dbh.collection("usuario").doc(user.uid).get();
       setTpUsuario(usu.data().tpUsuario);
       setUsuario(usu.data());
-      console.log(tpUsuario);
     } catch (e) {
       console.log(e);
     }

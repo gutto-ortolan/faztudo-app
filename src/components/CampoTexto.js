@@ -2,6 +2,7 @@ import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
+import Fonts from "../styles/Fonts";
 
 const CampoTexto = ({ labelValue, placeholderText, iconType, ...rest }) => {
   return (
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     width: 50,
   },
   input: {
+    fontFamily: Fonts.labels,
     padding: 10,
     flex: 1,
     fontSize: 16,

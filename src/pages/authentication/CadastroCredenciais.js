@@ -215,14 +215,15 @@ const Estilos = StyleSheet.create({
     marginBottom: 10,
   },
   mensagemConta: {
-    fontFamily: Fonts.teste,
+    fontFamily: Fonts.tituloNegrito,
     fontSize: 25,
     //fontWeight: "bold",
     color: "#ffb745",
   },
   mensagemCredencial: {
+    fontFamily: Fonts.subtitulo,
     fontSize: 13,
-    fontWeight: "bold",
+    //fontWeight: "bold",
     color: "black",
   },
   mensagemErro: {
@@ -253,7 +254,8 @@ const Estilos = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontFamily: Fonts.botoes,
+    //fontWeight: "bold",
     color: "#ffffff",
   },
 });

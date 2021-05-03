@@ -3,10 +3,10 @@ import { View, Text } from "react-native";
 
 import FabButton from "../../../components/FabButtonGroup";
 
-const PesquisarProfissionais = ({ navigation }) => {
+const ServicosPendentes = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Pesquisar Profissionais</Text>
+      <Text>Serviços Pendentes</Text>
       <FabButton
         style={{ bottom: 80, right: 60 }}
         buttons={[true, false]}
@@ -17,4 +17,4 @@ const PesquisarProfissionais = ({ navigation }) => {
   );
 };
 
-export default PesquisarProfissionais;
+export default ServicosPendentes;

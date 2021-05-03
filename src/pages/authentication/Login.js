@@ -187,7 +187,7 @@ const Estilos = StyleSheet.create({
   },
   registerText: {
     color: "#222",
-    fontFamily: Fonts.teste,
+    fontFamily: Fonts.textos,
   },
   mensagemErro: {
     fontSize: 12,
@@ -211,8 +211,9 @@ const Estilos = StyleSheet.create({
     borderRadius: 3,
   },
   buttonText: {
+    fontFamily: Fonts.botoes,
     fontSize: 18,
-    fontWeight: "bold",
+    //fontWeight: "bold",
     color: "#ffffff",
   },
 });
