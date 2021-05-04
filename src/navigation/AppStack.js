@@ -1,10 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
+import { ActivityIndicator, View } from "react-native";
 import { AuthContext } from "./AuthProvider";
 import * as firebase from "firebase";
 import "firebase/firestore";
 
 import TabProfissional from "./Profissional";
 import TabCliente from "./Cliente";
+
+import Fonts from "../styles/Colors";
 
 const AppStack = () => {
   const { user, setUsuario } = useContext(AuthContext);
@@ -25,7 +28,17 @@ const AppStack = () => {
     }
   };
 
-  return tpUsuario === "P" ? <TabProfissional /> : <TabCliente />;
+  return tpUsuario ? (
+    tpUsuario === "P" ? (
+      <TabProfissional />
+    ) : (
+      <TabCliente />
+    )
+  ) : (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <ActivityIndicator color={Fonts.amarelo} size="large" />
+    </View>
+  );
 };
 
 export default AppStack;

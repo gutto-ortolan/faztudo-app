@@ -11,7 +11,7 @@ import FabButton from "../../../components/FabButtonGroup";
 
 const ServicosContratados = ({ navigation }) => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.containerBotoes}>
         <TouchableOpacity style={styles.botoes}>
           <Text>7 dias</Text>
@@ -23,7 +23,10 @@ const ServicosContratados = ({ navigation }) => {
           <Text>30 dias</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.containerServicos}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.containerServicos}
+      >
         <TouchableOpacity style={styles.cardServicos}>
           <Text>Serviços</Text>
         </TouchableOpacity>
@@ -39,14 +42,14 @@ const ServicosContratados = ({ navigation }) => {
         <TouchableOpacity style={styles.cardServicos}>
           <Text>Serviços</Text>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
       <FabButton
         style={{ bottom: 80, right: 60 }}
         buttons={[true, false]}
         icon2="search"
         texto1="Filtrar"
       />
-    </ScrollView>
+    </View>
   );
 };
 

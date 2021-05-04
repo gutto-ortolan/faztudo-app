@@ -3,20 +3,18 @@ import { View, Text } from "react-native";
 
 import FabButton from "../../../components/FabButtonGroup";
 
-const MeusServicos = () => {
+const ServicosPendentes = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Meus Serviços</Text>
+      <Text>Serviços Pendentes</Text>
       <FabButton
         style={{ bottom: 80, right: 60 }}
-        buttons={[true, true]}
+        buttons={[true, false]}
         icon2="search"
         texto1="Filtrar"
-        icon3="hammer"
-        texto2="Novo Serviço"
       />
     </View>
   );
 };
 
-export default MeusServicos;
+export default ServicosPendentes;

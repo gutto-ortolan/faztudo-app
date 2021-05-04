@@ -1,79 +1,128 @@
 import React, { useContext, useState, useEffect } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import "firebase/firestore";
 
 import Perfil from "../pages/aplicativo/Perfil";
 import ServicosContratados from "../pages/aplicativo/profissional/ServicosContratados";
+import ServicosPendentes from "../pages/aplicativo/profissional/ServicosPendentes";
 import MeusServicos from "../pages/aplicativo/profissional/MeusServicos";
 
-import {
-  FontAwesome5,
-  Ionicons,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+import Fonts from "../styles/Fonts";
+import Colors from "../styles/Colors";
+
+const Stack1 = createStackNavigator();
+const Stack2 = createStackNavigator();
+const Stack3 = createStackNavigator();
+const Stack4 = createStackNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const ServicosContratadosStack = ({ navigation }) => (
-  <Stack.Navigator>
-    <Stack.Screen
+  <Stack1.Navigator>
+    <Stack1.Screen
       name="ServicosContratados"
       component={ServicosContratados}
       options={{
         title: "Serviços Contratados",
-        headerTitleStyle: {
-          color: "#2e64e5",
-          fontSize: 18,
-        },
+        headerTitleAlign: "center",
+        // headerLeft: () => (
+        //   <View
+        //     style={{
+        //       justifyContent: "center",
+        //       alignItems: "center",
+        //       marginLeft: 5,
+        //     }}
+        //   >
+        //     <FontAwesome5.Button
+        //       name="bars"
+        //       backgroundColor={Colors.amarelo}
+        //       size={23}
+        //       onPress={() => {
+        //         console.log("funcionou");
+        //       }}
+        //     />
+        //   </View>
+        // ),
         headerStyle: {
-          shadowColor: "#fff",
-          elevation: 3,
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
         },
       }}
     />
-  </Stack.Navigator>
+  </Stack1.Navigator>
+);
+
+const ServicosPendentesStack = ({ navigation }) => (
+  <Stack2.Navigator>
+    <Stack2.Screen
+      name="ServicosPendentes"
+      component={ServicosPendentes}
+      options={{
+        title: "Serviços Pendentes",
+        headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
+        },
+      }}
+    />
+  </Stack2.Navigator>
 );
 
 const MeusServicosStack = ({ navigation }) => (
-  <Stack.Navigator>
-    <Stack.Screen
+  <Stack3.Navigator>
+    <Stack3.Screen
       name="MeusServicos"
       component={MeusServicos}
       options={{
         title: "Meus Serviços",
-        headerTitleStyle: {
-          color: "#2e64e5",
-          fontSize: 18,
-        },
+        headerTitleAlign: "center",
         headerStyle: {
-          shadowColor: "#fff",
-          elevation: 3,
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
         },
       }}
     />
-  </Stack.Navigator>
+  </Stack3.Navigator>
 );
 
 const PerfilStack = ({ navigation }) => (
-  <Stack.Navigator>
-    <Stack.Screen
+  <Stack4.Navigator>
+    <Stack4.Screen
       name="Perfil"
       component={Perfil}
       options={{
         title: "Perfil",
+        headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
+        },
       }}
     />
-  </Stack.Navigator>
+  </Stack4.Navigator>
 );
 
 const TabProfissional = ({ navigation }) => (
   <Tab.Navigator
-    tabBarOptions={{
-      activeTintColor: "#ffb745",
-    }}
+    initialRouteName="ServicosContratadosStack"
+    activeColor={Colors.amarelo}
+    barStyle={{ backgroundColor: Colors.white }}
   >
     <Tab.Screen
       name="ServicosContratadosStack"
@@ -82,6 +131,17 @@ const TabProfissional = ({ navigation }) => (
         tabBarLabel: "Contratados",
         tabBarIcon: ({ color, size }) => (
           <FontAwesome5 name="briefcase" color={color} size={23} />
+        ),
+      })}
+    />
+
+    <Tab.Screen
+      name="ServicosPendentesStack"
+      component={ServicosPendentesStack}
+      options={({ route }) => ({
+        tabBarLabel: "Pendentes",
+        tabBarIcon: ({ color, focused }) => (
+          <FontAwesome5 name="clock" color={color} size={23} />
         ),
       })}
     />
@@ -111,3 +171,10 @@ const TabProfissional = ({ navigation }) => (
 );
 
 export default TabProfissional;
+
+const Estilos = StyleSheet.create({
+  labelIcon: {
+    fontFamily: Fonts.labels,
+    backgroundColor: "red",
+  },
+});

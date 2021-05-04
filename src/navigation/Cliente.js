@@ -1,10 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StackActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import "firebase/firestore";
 
 import Perfil from "../pages/aplicativo/Perfil";
+import EditarPerfil from "../pages/aplicativo/EditarPerfil";
 import ServicosContratados from "../pages/aplicativo/cliente/ServicosContratados";
 import ServicosPendentes from "../pages/aplicativo/cliente/ServicosPendentes";
 import PesquisarProfissionais from "../pages/aplicativo/cliente/PesquisarProfissionais";
@@ -84,7 +86,7 @@ const PesquisarProfissionaisStack = ({ navigation }) => (
       name="PesquisarProfissionais"
       component={PesquisarProfissionais}
       options={{
-        title: "Pesquisar Profissionais",
+        title: "Contratar Profissionais",
         headerTitleAlign: "center",
         headerStyle: {
           backgroundColor: Colors.amarelo,
@@ -113,6 +115,30 @@ const PerfilStack = ({ navigation }) => (
           color: Colors.white,
           fontFamily: Fonts.botoes,
         },
+      }}
+    />
+    <Stack4.Screen
+      name="EditarPerfil"
+      component={EditarPerfil}
+      options={{
+        title: "Editar Perfil",
+        headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
+        },
+        headerLeft: () => (
+          <FontAwesome5.Button
+            name="arrow-left"
+            size={20}
+            backgroundColor={Colors.amarelo}
+            color="#fff"
+            onPress={() => navigation.dispatch(StackActions.pop(1))}
+          />
+        ),
       }}
     />
   </Stack4.Navigator>
@@ -150,9 +176,9 @@ const TabCliente = ({ navigation }) => (
       name="PesquisarProfissionaisStack"
       component={PesquisarProfissionaisStack}
       options={({ route }) => ({
-        tabBarLabel: "Pesquisar",
+        tabBarLabel: "Contratar",
         tabBarIcon: ({ color }) => (
-          <FontAwesome5 name="search" color={color} size={23} />
+          <FontAwesome5 name="hands-helping" color={color} size={23} />
         ),
       })}
     />
@@ -176,5 +202,11 @@ const Estilos = StyleSheet.create({
   labelIcon: {
     fontFamily: Fonts.labels,
     backgroundColor: "red",
+  },
+  btnVoltar: {
+    marginLeft: 10,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

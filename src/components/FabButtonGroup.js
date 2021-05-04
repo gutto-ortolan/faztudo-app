@@ -64,7 +64,7 @@ export default class FabButton extends Component {
     return (
       <View style={[styles.container, this.props.style]}>
         {this.props.buttons[1] ? (
-          <TouchableWithoutFeedback onPress={this.props.onPress3}>
+          <TouchableWithoutFeedback onPress={this.props.onPress2}>
             <Animated.View style={[button3Style, styles.containerButton]}>
               <Text style={[styles.texto]}>{this.props.texto2}</Text>
               <Animated.View style={[styles.button, styles.subMenu]}>
