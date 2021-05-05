@@ -1,13 +1,16 @@
 import React, { useContext, useState, useEffect } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { StackActions } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import "firebase/firestore";
 
 import Perfil from "../pages/aplicativo/Perfil";
+import EditarPerfil from "../pages/aplicativo/EditarPerfil";
 import ServicosContratados from "../pages/aplicativo/profissional/ServicosContratados";
 import ServicosPendentes from "../pages/aplicativo/profissional/ServicosPendentes";
 import MeusServicos from "../pages/aplicativo/profissional/MeusServicos";
+import CriarServico from "../pages/aplicativo/profissional/CriarServico";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 
@@ -95,6 +98,30 @@ const MeusServicosStack = ({ navigation }) => (
         },
       }}
     />
+    <Stack3.Screen
+      name="CriarServico"
+      component={CriarServico}
+      options={{
+        title: "Criar Serviço",
+        headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
+        },
+        headerLeft: () => (
+          <FontAwesome5.Button
+            name="arrow-left"
+            size={20}
+            backgroundColor={Colors.amarelo}
+            color="#fff"
+            onPress={() => navigation.dispatch(StackActions.pop(1))}
+          />
+        ),
+      }}
+    />
   </Stack3.Navigator>
 );
 
@@ -113,6 +140,30 @@ const PerfilStack = ({ navigation }) => (
           color: Colors.white,
           fontFamily: Fonts.botoes,
         },
+      }}
+    />
+    <Stack4.Screen
+      name="EditarPerfil"
+      component={EditarPerfil}
+      options={{
+        title: "Editar Perfil",
+        headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: Colors.amarelo,
+        },
+        headerTitleStyle: {
+          color: Colors.white,
+          fontFamily: Fonts.botoes,
+        },
+        headerLeft: () => (
+          <FontAwesome5.Button
+            name="arrow-left"
+            size={20}
+            backgroundColor={Colors.amarelo}
+            color="#fff"
+            onPress={() => navigation.dispatch(StackActions.pop(1))}
+          />
+        ),
       }}
     />
   </Stack4.Navigator>

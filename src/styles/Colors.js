@@ -18,4 +18,5 @@ export default {
   red: "#E83F5B",
 
   amarelo: "#ffb745",
+  fundo: "#f7f7f7",
 };

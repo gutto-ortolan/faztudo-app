@@ -80,7 +80,9 @@ const Perfil = ({ navigation }) => {
             firebase.auth().signOut();
           }}
           onPress2={() => {
-            navigation.navigate("EditarPerfil");
+            navigation.navigate("EditarPerfil", {
+              usuario: usuario,
+            });
           }}
         />
       ) : null}
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
   },
   backgroud: {
     marginTop: 30,
-    marginHorizontal: 25,
+    paddingHorizontal: 30,
   },
   containerAvatarCamera: {
     width: 46,

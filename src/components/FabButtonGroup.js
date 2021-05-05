@@ -25,6 +25,16 @@ export default class FabButton extends Component {
     this.open = !this.open;
   };
 
+  onPressButton1 = () => {
+    this.props.onPress1();
+    this.toggleMenu();
+  };
+
+  onPressButton2 = () => {
+    this.props.onPress2();
+    this.toggleMenu();
+  };
+
   render() {
     const button2Style = {
       transform: [
@@ -64,7 +74,7 @@ export default class FabButton extends Component {
     return (
       <View style={[styles.container, this.props.style]}>
         {this.props.buttons[1] ? (
-          <TouchableWithoutFeedback onPress={this.props.onPress2}>
+          <TouchableWithoutFeedback onPress={this.onPressButton2}>
             <Animated.View style={[button3Style, styles.containerButton]}>
               <Text style={[styles.texto]}>{this.props.texto2}</Text>
               <Animated.View style={[styles.button, styles.subMenu]}>
@@ -75,7 +85,7 @@ export default class FabButton extends Component {
         ) : null}
 
         {this.props.buttons[0] ? (
-          <TouchableWithoutFeedback onPress={this.props.onPress1}>
+          <TouchableWithoutFeedback onPress={this.onPressButton1}>
             <Animated.View style={[button2Style, styles.containerButton]}>
               <Text style={[styles.texto]}>{this.props.texto1}</Text>
               <Animated.View style={[styles.button, styles.subMenu]}>

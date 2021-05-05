@@ -53,16 +53,4 @@ const styles = StyleSheet.create({
   menu: {
     backgroundColor: Colors.amarelo,
   },
-  subMenu: {
-    width: 48,
-    height: 48,
-    borderRadius: 48 / 2,
-    backgroundColor: Colors.amarelo,
-    marginRight: 5,
-  },
-  texto: {
-    marginRight: 10,
-    fontFamily: Fonts.labels,
-    fontSize: 15,
-  },
 });
